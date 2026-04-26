@@ -1,8 +1,10 @@
 import datetime
+import os
 
-date = datetime.date.today()
-with open("log.txt", "w", encoding="utf-8") as f:
-    f.write(f"Hello, Ryohta!\nToday is {date}.")
+if not os.path.exists("log.txt"):
+    date = datetime.date.today()
+    with open("log.txt", "w", encoding="utf-8") as f:
+        f.write(f"Hello, Ryohta!\nToday is {date}.")
 
 while True:
     text = str(input("メモ(`exit`で終了)："))
